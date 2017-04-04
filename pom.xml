@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>terms-acceptance</name>
+	<name>gerenciador-de-termos</name>
 	<description>REST Service Demonstration Project for Terms Acceptance Management</description>
 
 	<parent>
