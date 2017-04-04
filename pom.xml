@@ -37,6 +37,18 @@
 		<url>https://github.com/elizeuborges/gerenciador-de-termos/issues</url>
 	</issueManagement>
 
+	<ciManagement>
+        <system>Travis CI</system>
+        <url>https://travis-ci.org/elizeuborges/gerenciador-de-termos</url>
+    </ciManagement>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
