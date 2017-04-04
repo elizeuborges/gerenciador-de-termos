@@ -11,7 +11,7 @@ jdk:
   - oraclejdk8
 
 script:
-  - mvn clean cobertura:cobertura sonar:sonar
+  - mvn clean test sonar:sonar
 
 cache:
   directories:
