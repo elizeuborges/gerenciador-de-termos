@@ -2,14 +2,14 @@ language: java
 sudo: false
 install: true
 addons:
-  sonarqube: true    
-env:
-  global:
-    - secure: "k2Yy+Z+jPnV+I/Glg3aIARj2ZU25zPeT/yzzKYsS5T8EOaMJpG6fzhvbF01VDicFiybu4EhKSy5rgjMPWky992V0wX6xagdQFujLicbHvihideEHxBp0H8KZhA3YmW3xBiWa3wQGrY0aJ9kf7Zk+NO7fbm2CRm82P8Wy9VK2Kbs0X/TIQfUvp5OZDwETY+l1G44tn6ViMVx8Mb9vBVFvzdKh2+LsmJq5jGxdyESo/CNzurGcxYljK487e8tSgVOOpGjtQ4D5Cq0cDUpsudXz7oh5zSlHKn90MYiATGUCwZ35ZjF1oCzgnwMA77fSzsTucn3mw8s1rEvstMYVEu/Va67/x+342sWMLzsKp9bL2dgSqkEt/P5g3zs3MmCbrhMw4WBNEwjjDaJcXFfAOQZNko3CXcO712G51H0FF351Q+LwP3H7LDUpiK7E4bKNJeiD68KLF3yFgDZ09SEm4hIcvklSeD6tkpa/oUkE382Rtc0Z96ApvpxpenEWgZ5j/sxrdhKYXH5VIpSbGVJ8IrPpWEWOwysDnxxmBNUhXEcPc7m8sq02pyS4ynNxXi33l6MjvtlBoRmB/zg3qJcuAjB050a7cgLbsCRwl2WUXgyE9yS1LrtGkOFsIvhu/gNI1jUxmEakcePwmAYDZ7kWo0p17/oFKQw3QAf2aPdMgMD91Cw="      
+  sonarqube:
+    organization: elizeuborges-github
+    token:
+      secure: "k2Yy+Z+jPnV+I/Glg3aIARj2ZU25zPeT/yzzKYsS5T8EOaMJpG6fzhvbF01VDicFiybu4EhKSy5rgjMPWky992V0wX6xagdQFujLicbHvihideEHxBp0H8KZhA3YmW3xBiWa3wQGrY0aJ9kf7Zk+NO7fbm2CRm82P8Wy9VK2Kbs0X/TIQfUvp5OZDwETY+l1G44tn6ViMVx8Mb9vBVFvzdKh2+LsmJq5jGxdyESo/CNzurGcxYljK487e8tSgVOOpGjtQ4D5Cq0cDUpsudXz7oh5zSlHKn90MYiATGUCwZ35ZjF1oCzgnwMA77fSzsTucn3mw8s1rEvstMYVEu/Va67/x+342sWMLzsKp9bL2dgSqkEt/P5g3zs3MmCbrhMw4WBNEwjjDaJcXFfAOQZNko3CXcO712G51H0FF351Q+LwP3H7LDUpiK7E4bKNJeiD68KLF3yFgDZ09SEm4hIcvklSeD6tkpa/oUkE382Rtc0Z96ApvpxpenEWgZ5j/sxrdhKYXH5VIpSbGVJ8IrPpWEWOwysDnxxmBNUhXEcPc7m8sq02pyS4ynNxXi33l6MjvtlBoRmB/zg3qJcuAjB050a7cgLbsCRwl2WUXgyE9yS1LrtGkOFsIvhu/gNI1jUxmEakcePwmAYDZ7kWo0p17/oFKQw3QAf2aPdMgMD91Cw="      
 jdk:
   - oraclejdk8
 script:
-  - mvn clean test sonar:sonar -Dsonar.login=$SONAR_TOKEN
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 cache:
   directories:
     - '$HOME/.m2/repository'
